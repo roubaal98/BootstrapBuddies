@@ -9,5 +9,7 @@
   * alkhasrr@mail.uc.edu
 * Joseph Snider
   * sniderjs@mail.uc.edu
+* John Franco (Project Advisor) :octocat:
+  * franco@ucmail.uc.edu
 
 #### Project Start Date:  9/14/21
