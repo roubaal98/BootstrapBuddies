@@ -17,3 +17,7 @@
 ## Project Topic Area
   * Web app development
   * AI / Game Theory
+
+## Project Advisor
+* John Franco
+  * franco@ucmail.uc.edu
