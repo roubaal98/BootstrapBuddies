@@ -1,4 +1,4 @@
-💥 # Bootstrap Buddies 💥
+# 💥 Bootstrap Buddies 💥
 
 ## Contributors:
 * Christopher Tatlonghari 🌟
