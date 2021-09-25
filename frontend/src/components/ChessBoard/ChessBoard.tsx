@@ -1,69 +1,60 @@
 import * as React from 'react';
 import Chessboard from 'chessboardjsx' ;
-import WithMoveValidation from  'chessboardjsx';
-import PlayRandomMoveEngine from  'chessboardjsx' ;
-import RandomVsRandomGame from  'chessboardjsx';
-import CustomizedBoard from  'chessboardjsx';
-import AllowDragFeature from   'chessboardjsx';
-import PrestoChangoExample from  'chessboardjsx';
-import UndoMove from   'chessboardjsx';
-import SpareOnDrop from   'chessboardjsx';
+import * as Chess from 'chess.js';
 
-interface ChessBoardState {
-  showCustomizedBoard: boolean,
-  showWithMoveValidation: boolean,
-  showRandomVsRandomGame: boolean,
-  showPlayRandomMoveEngine: boolean,
-  showAllowDragFeature: boolean,
-  showPrestoChango: boolean,
-  showUndoMove: boolean,
-  showSpareOnDrop: boolean
+interface ChessboardProps {
+  fen?: string;
 }
 
-class ChessBoard extends React.Component<{}, ChessBoardState> {
+interface ChessBoardState {
+  chess: any;
+  fen: string;
+}
+
+class ChessBoard extends React.Component<ChessboardProps, ChessBoardState> {
+  timer = () => window.setTimeout(this.makeRandomMove, 1000);
 
   constructor ( props: any) {
     super( props );
     this.state = {
-      showCustomizedBoard: false,
-      showWithMoveValidation: true,
-      showRandomVsRandomGame: false,
-      showPlayRandomMoveEngine: false,
-      showAllowDragFeature: false,
-      showPrestoChango: false,
-      showUndoMove: false,
-      showSpareOnDrop: false
+      chess: null,
+      fen: ""
     }
   };
 
   public render() {
-    return (
+    return(
       <div>
-        <Chessboard position="start">
-          {this.state.showCustomizedBoard && <CustomizedBoard />}
-          {this.state.showWithMoveValidation && <WithMoveValidation />}
-          {this.state.showRandomVsRandomGame && <RandomVsRandomGame />}
-          {this.state.showPlayRandomMoveEngine && <PlayRandomMoveEngine />}
-          {this.state.showAllowDragFeature && <AllowDragFeature />}
-          {this.state.showPrestoChango && <PrestoChangoExample />}
-          {this.state.showUndoMove && <UndoMove />}
-          {this.state.showSpareOnDrop && <SpareOnDrop />}
+        <Chessboard position={this.state.fen}>
         </Chessboard>
-      </div>
-    );
+    </div>
+    )
   }
 
   componentDidMount() {
     this.setState({
-      showCustomizedBoard: false,
-      showWithMoveValidation: true,
-      showRandomVsRandomGame: true,
-      showPlayRandomMoveEngine: false,
-      showAllowDragFeature: false,
-      showPrestoChango: false,
-      showUndoMove: false,
-      showSpareOnDrop: false
+      chess: new Chess(),
+      fen: "start"
     });
+    setTimeout(() => this.makeRandomMove(), 1000);
+  }
+
+  private makeRandomMove = () => {
+    let chess = this.state.chess;
+    let possibleMoves = chess.moves();
+
+    // exit if the game is over
+    if (
+      chess.game_over() === true ||
+      chess.in_draw() === true ||
+      possibleMoves.length === 0
+    )
+      return;
+
+    let randomIndex = Math.floor(Math.random() * possibleMoves.length);
+    chess.move(possibleMoves[randomIndex]);
+    this.setState({ fen: chess.fen() });
+    this.timer();
   }
 }
 
