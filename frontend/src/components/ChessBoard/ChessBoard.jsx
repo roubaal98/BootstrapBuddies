@@ -3,49 +3,85 @@ import Chessboard from 'chessboardjsx' ;
 import * as Chess from 'chess.js';
 
 class ChessBoard extends React.Component {
-  timer = () => window.setTimeout(this.makeRandomMove, 1000);
-
   constructor (props) {
     super( props );
     this.state = {
-      chess: null,
-      fen: ""
+      fen: "",
+      history: []
     }
   };
 
   render() {
     return(
       <div>
-        <Chessboard position={this.state.fen}>
+        <Chessboard 
+          position={this.state.fen}
+          onDrop={this.onDrop}>
         </Chessboard>
     </div>
     )
   }
 
   componentDidMount() {
+    this.game = new Chess();
     this.setState({
-      chess: new Chess(),
-      fen: "start"
+      fen: "start",
+      history: []
     });
-    setTimeout(() => this.makeRandomMove(), 1000);
   }
 
-  makeRandomMove = () => {
-    let chess = this.state.chess;
-    let possibleMoves = chess.moves();
+  /**
+   * Function callback that indicates a move is being requested by the user
+   * @param {sourceSquare} String - Contains the start square of the move i.e. 'e2'
+   * @param {targetSquare} String - Contains the end square of the move i.e. 'e4'
+   * @returns void
+   */
+  onDrop = ({ sourceSquare, targetSquare }) => {
+    // see if the move is legal
+    let move = this.game.move({
+      from: sourceSquare,
+      to: targetSquare
+    });
 
-    // exit if the game is over
-    if (
-      chess.game_over() === true ||
-      chess.in_draw() === true ||
-      possibleMoves.length === 0
-    )
+    // illegal move
+    if (move === null) return;
+    this.setState(({ history }) => ({
+      fen: this.game.fen(),
+      history: this.game.history({ verbose: true })
+    }));
+
+    // By Default, let the oponent make a random move until we integrate with the engine
+    this.makeRandomMove();
+  };
+
+  /**
+   * Function for making a random move on the board
+   * @returns void
+   */
+  makeRandomMove = () => {
+    let possibleMoves = this.game.moves();
+    if (this.checkIfGameOver()) {
       return;
+    }
 
     let randomIndex = Math.floor(Math.random() * possibleMoves.length);
-    chess.move(possibleMoves[randomIndex]);
-    this.setState({ fen: chess.fen() });
-    this.timer();
+    this.game.move(possibleMoves[randomIndex]);
+    this.setState({ fen: this.game.fen() });
+  }
+
+  /**
+   * Function for checking if the game is over
+   * @returns true if game is over, false if not over
+   */
+  checkIfGameOver = () => {
+    let possibleMoves = this.game.moves();
+
+    // exit if the game is over
+    if (this.game.game_over() === true || this.game.in_draw() === true || possibleMoves.length === 0) {
+      return true;
+    }
+
+    return false;
   }
 }
 
