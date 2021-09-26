@@ -1,5 +1,5 @@
 import '../../stylesheets/App.css';
-import ChessBoard from 'src/components/ChessBoard/ChessBoard';
+import ChessBoard from '../ChessBoard/ChessBoard';
 
 function App() {
   return (

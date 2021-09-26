@@ -2,19 +2,10 @@ import * as React from 'react';
 import Chessboard from 'chessboardjsx' ;
 import * as Chess from 'chess.js';
 
-interface ChessboardProps {
-  fen?: string;
-}
-
-interface ChessBoardState {
-  chess: any;
-  fen: string;
-}
-
-class ChessBoard extends React.Component<ChessboardProps, ChessBoardState> {
+class ChessBoard extends React.Component {
   timer = () => window.setTimeout(this.makeRandomMove, 1000);
 
-  constructor ( props: any) {
+  constructor (props) {
     super( props );
     this.state = {
       chess: null,
@@ -22,7 +13,7 @@ class ChessBoard extends React.Component<ChessboardProps, ChessBoardState> {
     }
   };
 
-  public render() {
+  render() {
     return(
       <div>
         <Chessboard position={this.state.fen}>
@@ -39,7 +30,7 @@ class ChessBoard extends React.Component<ChessboardProps, ChessBoardState> {
     setTimeout(() => this.makeRandomMove(), 1000);
   }
 
-  private makeRandomMove = () => {
+  makeRandomMove = () => {
     let chess = this.state.chess;
     let possibleMoves = chess.moves();
 
