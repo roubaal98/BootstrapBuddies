@@ -16,6 +16,14 @@
 * Develop a web service to allow communication between the middleware and the engine.
 * Research useful C# libraries for chess logic.
 
+## Joe Snider
+
+* Research basic and common machine learning
+* Create database diagrams
+* Build Data Access Layers (connect database to code base)
+* Build controllers that take data from database and put them into an API.
+* Lsitener functions for chess engine. Listener will read the inputs made by the user.
+
 ## AJ Delcimmuto
 * Initialize a basic chess board using chessboardjsx
 * Initialize and implement game logic using chess.js library
