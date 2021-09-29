@@ -1,4 +1,4 @@
-#Task List
+# Task List
 
 ## Rouba Al-Khasawneh
 
@@ -7,3 +7,18 @@
 * Incorporate the components of the web application.
 * Test the web application for accuracy in performance.
 * Validate that the web app is ready for the chess engine to be hosted on it.
+
+## Chris Tatlonghari
+
+* Create a basic structure for the chess engine.
+* Create Database using mySQL - This will be used for storing history, and user account information.
+* Develop a basic utility function for the chess engine that picks the best move from a list of possible moves.
+* Develop a web service to allow communication between the middleware and the engine.
+* Research useful C# libraries for chess logic.
+
+## AJ Delcimmuto
+* Initialize a basic chess board using chessboardjsx
+* Initialize and implement game logic using chess.js library
+* Implement game history stepping
+* Implement game analysis
+* Integrate analysis with a publicly available chess API
