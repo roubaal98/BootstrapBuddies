@@ -11,50 +11,52 @@
   * sniderjs@mail.uc.edu
 * John Franco (Project Advisor) :octocat:
   * franco@ucmail.uc.edu
-* Insert Project Abstract Here (limit of 400 ascii chars)
+  
+* Project Abstract
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/projectAbstract.md
 
 ## Project Description
-* Insert Project Description Here
+* https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/projectDescription.md
 
 ## User Stories and Design Diagrams
 ### User Stories
-  * Insert Here
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/userStories.md
 ### Design Diagrams: Level 0, Level 1 and Level 2 
   *  ![D0](https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/designDiagrams/D0.png?raw=true "D0")
   *  ![D1](https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/designDiagrams/D1.png?raw=true "D1")
   *  ![D2](https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/designDiagrams/D2.png?raw=true "D2")
 
-### Description of the Diagrams: including conventions and a brief description of the purpose of each component.
-  * Insert Here
+### Description of the Diagrams
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/designDiagrams/description.md
 
 ## Project Tasks and Timeline
 ### Task List
-  * Insert Here
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/taskList.md
 ### Timeline
-  * Insert Here
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/timeline/timeline.md
 ### Effort Matrix
-  * Insert Here
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/timeline/effortMatrix.pdf
 
 ## PPT Slideshow
-* Insert Here
+* https://github.com/ChrisTatlonghari/BootstrapBuddies/tree/main/documentation/datschess.pptx
 
 ## Self-Assessment Essays
-* Insert Here
+* https://github.com/ChrisTatlonghari/BootstrapBuddies/tree/main/documentation/homeworkEssays
 
 ## Professional Biographies
-* Insert Here
+* https://github.com/ChrisTatlonghari/BootstrapBuddies/tree/main/documentation/teamPersonalBios
 
 ## Budget
 ### Expenses
   * There have not been any expenses yet. We plan on paying for web hosting and buying a domain.
 
 ## Appendix
-### include appropriate references, citations, links to code repositories, and meeting notes.
+### Links to code repositories
   * [Chessboardjsx Repository](https://github.com/willb335/chessboardjsx)
   * [Chess.js Repository](https://github.com/jhlywa/chess.js)
   * [React documentation](https://reactjs.org/)
-### there should be evidence justifying 45 hours of effort for each team member.
-  * Insert Here
+### Evidence of effort for each team member.
+  * https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/timeline/proofOfEffort.md
 
 
 
