@@ -1,0 +1,2 @@
+  *  ![D0](https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/timeline/timeline1.png?raw=true "timeline1")
+  *  ![D1](https://github.com/ChrisTatlonghari/BootstrapBuddies/blob/main/documentation/timeline/timeline2.png?raw=true "timeline2")
